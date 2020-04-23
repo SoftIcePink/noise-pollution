@@ -1,9 +1,4 @@
 <h1 align="center">Welcome to noise-pollution project:airplane:</h1>
-<p>
-  <a href="https://www.npmjs.com/package/noise" target="_blank">
-    <img alt="Version" src="https://img.shields.io/npm/v/noise.svg">
-  </a>
-</p>
 
 > This app gives the user the ability to list the airports near a given location
 ## A quick look at the app
