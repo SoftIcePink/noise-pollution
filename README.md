@@ -1,7 +1,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
+  <a href="https://github.com/SoftIcePink/noise-pollution">
     <img src="https://i.imgur.com/CT0EagA.png" alt="Logo" width="200" height="200">
   </a>
 
@@ -24,8 +24,8 @@
   * [Prerequisites](#prerequisites)
   * [Installation](#installation)
 * [Usage](#usage)
+  * [Quick demo](#quick-demo)
 * [Improvements](#improvements)
-* [License](#license)
 * [Contact](#contact)
 
 
@@ -76,7 +76,8 @@ npm install
 ```sh
 node app.js
 ```
-**Quick demo**
+### Quick demo
+
 ![application noise-pollution](https://i.imgur.com/S7YNCUt.png)
 
 ## Improvements
@@ -91,8 +92,10 @@ node app.js
 
 <!-- CONTACT -->
 ## Contact
-
-Your Name - [SoftIcePink](https://github.com/SoftIcePink) 
+<p align="center">
+  <a href="https://github.com/SoftIcePink">
+    <img src="https://i.imgur.com/vADoYGW.png" alt="Logo" width="200" height="200">
+  </a></p>
 
 Project Link: [noise-pollution](https://github.com/SoftIcePink/noise-pollution)
 
