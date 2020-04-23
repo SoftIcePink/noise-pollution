@@ -1,0 +1,26 @@
+{
+  "name": "noise",
+  "version": "1.0.0",
+  "description": "<h1 align=\"center\">Welcome to noise 👋</h1> <p>   <a href=\"https://www.npmjs.com/package/noise\" target=\"_blank\">     <img alt=\"Version\" src=\"https://img.shields.io/npm/v/noise.svg\">   </a> </p>",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.0",
+    "portfinder": "^1.0.25",
+    "open": "^7.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SoftIcePink/noise-pollution.git"
+  },
+  "author": "D.RS",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SoftIcePink/noise-pollution/issues"
+  },
+  "homepage": "https://github.com/SoftIcePink/noise-pollution#readme"
+}
