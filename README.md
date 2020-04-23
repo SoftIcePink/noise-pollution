@@ -9,15 +9,16 @@
 
 ## Dependencies
 <p>You'll need a few node modules to run this app</p>
-### Express
+
+***Express***
 ```sh
 npm install express
 ```
-### Node-fetch
+***Node-fetch***
 ```sh
 npm install node-fetch
 ```
-### Portfinder
+***Portfinder***
 ```sh
 npm install portfinder
 ```
