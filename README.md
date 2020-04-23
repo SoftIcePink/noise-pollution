@@ -89,6 +89,7 @@ node app.js
 * Data - Synchronous fetch
 * Code - Change variables and function naming
 * More to be added, but for now these few points will be my main goals in the next few days.
+* Map - Use SVG format for icon markers
 
 <!-- CONTACT -->
 <p align="center">
