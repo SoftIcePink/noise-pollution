@@ -22,7 +22,11 @@ npm install node-fetch
 ```sh
 npm install portfinder
 ```
+## Usage
 
+```sh
+node app.js
+```
 ## Author
 
 👤 **D.RS **
