@@ -79,7 +79,7 @@ node app.js
 **Quick demo**
 ![application noise-pollution](https://i.imgur.com/S7YNCUt.png)
 
-## Improvements coming the next few days
+## Improvements
 * Code - Comments modification (delete useless comments, simplify, explicit some code)
 * Map - Click to get position (dynamically changes the inputs)
 * Map - Show the range perimeter
