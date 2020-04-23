@@ -25,7 +25,7 @@ node app.js
 ```
 ## Author
 
-👤 **D.RS **
+👤 **D.RS**
 
 * Github: [@SoftIcePink ](https://github.com/SoftIcePink )
 
