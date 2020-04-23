@@ -91,10 +91,10 @@ node app.js
 * More to be added, but for now these few points will be my main goals in the next few days.
 
 <!-- CONTACT -->
-## Contact
 <p align="center">
+  
   <a href="https://github.com/SoftIcePink">
-    <img src="https://i.imgur.com/vADoYGW.png" alt="Logo" width="200" height="200">
+    <img src="https://i.imgur.com/vADoYGW.png" alt="Logo" width="70" height="70">
   </a></p>
 
 Project Link: [noise-pollution](https://github.com/SoftIcePink/noise-pollution)
