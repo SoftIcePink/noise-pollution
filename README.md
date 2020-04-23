@@ -6,7 +6,8 @@
 </p>
 
 > This app gives the user the ability to list the airports near a given location
-
+## A quick look at the app
+![application noise-pollution](https://i.imgur.com/S7YNCUt.png)
 ## Dependencies
 <p>You'll need a few node modules to run this app</p>
 
