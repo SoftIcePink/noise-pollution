@@ -1,0 +1,114 @@
+<!--
+ *  File    : index.html
+ *  Desc.   : Index | View
+ *  Project : Noise pollution | noise_pollution
+ *  Author  : D. RS
+ *  Source  : Parts of the file come from https://gitlab.com/oscarfrancois/nodejs__example/-/blob/master/index.html
+ *  Date    : 02.04.2020
+ *  Last modification : 23.04.2020
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Noise pollution</title>
+    <link rel="icon" href="img/airplane.png">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+      integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+      crossorigin=""></script>
+  </head>
+  <style>
+    #map { height: 300px; width:100%;}
+  </style>
+  <body class="bg-dark">
+    <div class="container col-md-4 col-md-offset-4">
+      <div class="form-group bg-light rounded">
+
+        <h1 class="lead text-center">Noise Pollution Form</h1>
+        <div class="input-group input-group-sm mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Latitude</span>
+          </div>
+          <input type="text" id="latitude" value="46.23412"/>
+        </div>
+        <div class="input-group input-group-sm mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Longitude</span>
+          </div>
+          <input type="text" id="longitude" value="6.052646"/>
+        </div>
+        <div class="input-group input-group-sm mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Distance (km)</span>
+          </div>
+          <input type="text" id="distance" value=""/>
+        </div>
+        <input type="button" value="Calculer" onclick="compute()"/> <br>
+      </div>
+    </div>
+    
+    <div id="result"></div>
+    <div id="map" class="rounded"></div>
+    
+      <script>
+
+        // Create a new marker icon
+        var planeIcon = L.icon({
+            iconUrl: 'img/airplane.png',
+            iconSize: [30, 30],
+            iconAnchor: [22, 94],
+            popupAnchor: [-3, -76],
+            shadowSize: [68, 95],
+            shadowAnchor: [22, 94]
+        });
+
+        // Generate the map object
+        var map = L.map('map', { zoomControl: false }).setView([46.23412, 6.052646], 13);
+         
+        // Affect the map to a source
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Compute function to get airports
+        function compute() {
+
+          // User's inputs
+          let longitude = document.getElementById("longitude").value;
+          let latitude = document.getElementById("latitude").value;
+          let distance = document.getElementById("distance").value;
+      
+          // Fetch from the node.js server
+          fetch('api/compute?longitude=' + longitude + '&latitude=' + latitude + '&distance=' + distance)
+            .then(function(response) {              
+              return response.json();
+            })
+            .then(data => {  
+              // Html element -> Table with 1 row = 1 airport
+              let htmlElement = "<div class='container bg-light rounded'><h2>Results</h2><p>List of airports found in a distance of " + distance + " km.</p><table class='table table-hover'>"+
+                "<thead><tr><th>Airport name</th><th>Distance [km]</th></tr><tbody>";
+
+              // Foreach aiports found, concat a new row in the table
+              data['airports'].forEach(airport =>{
+                // Add markers for each airports
+                L.marker([airport.lat, airport.lon], {icon: planeIcon }).addTo(map);
+
+                // Concat the cell/row html element with the json data we got in response
+                htmlElement += "<tr><td>"+airport.name+"</td>"+"<td>"+airport.distance+"</td>"+"</tr>"
+              })
+
+              htmlElement += "</tbody></table></div>"
+
+              // Overwrite current html element into this new element, to avoid having multiple tables created each time a request is made
+              document.getElementById("result").innerHTML = htmlElement;
+        });
+  
+      }
+      </script>
+      </div>
+  </body>
+</html>
