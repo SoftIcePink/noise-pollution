@@ -22,7 +22,7 @@
       crossorigin=""></script>
   </head>
   <style>
-    #map { height: 300px; width:100%;}
+    #map { height: 400px; width:100%;}
   </style>
   <body class="bg-dark">
     <div class="container col-md-4 col-md-offset-4">
@@ -59,15 +59,15 @@
         // Create a new marker icon
         var planeIcon = L.icon({
             iconUrl: 'img/airplane.png',
-            iconSize: [30, 30],
-            iconAnchor: [22, 94],
+            iconSize: [40, 40],
+            iconAnchor: [0, 0],
             popupAnchor: [-3, -76],
             shadowSize: [68, 95],
             shadowAnchor: [22, 94]
         });
 
         // Generate the map object
-        var map = L.map('map', { zoomControl: false }).setView([46.23412, 6.052646], 13);
+        var map = L.map('map', { scrollWheelZoom: false, zoomControl: false }).setView([46.23412, 6.052646], 13);
          
         // Affect the map to a source
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
